@@ -1,0 +1,376 @@
+section.navbar-area.navbar-nine
+	.container
+		.row
+			.col-lg-12
+				nav.navbar.navbar-expand-lg
+					a.navbar-brand(href='https://charm.monember.com/')
+						img(ngSrc='assets/images/images-wslogo2.svg', width="180", height="70")
+					button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNine' aria-controls='navbarNine' aria-expanded='false' aria-label='Toggle navigation')
+						span.toggler-icon
+						span.toggler-icon
+						span.toggler-icon
+					#navbarNine.collapse.navbar-collapse.sub-menu-bar
+						ul.navbar-nav.me-auto
+							li.nav-item
+								a.page-scroll.active(href='#hero-area') Giới Thiệu
+							li.nav-item
+								a.page-scroll(href='#services') Chương Trình
+							li.nav-item
+								a.page-scroll(href='#blog') Tin Tức
+							li.nav-item
+								a.page-scroll(href='#team') Đội Ngũ
+							li.nav-item
+								a.page-scroll(href='#album') Thư Viện Ảnh
+							li.nav-item
+								a.page-scroll(href='#contact') Liên Hệ
+.sidebar-left
+	.sidebar-close
+		a.close(href='#close')
+			i.lni.lni-close
+	.sidebar-content
+		p.text
+			| Lorem ipsum dolor sit amet adipisicing elit. Sapiente fuga nisi rerum
+			| iusto intro.
+		.sidebar-menu
+			h5.menu-title Quick Links
+			ul
+				li
+					a(href='javascript:void(0)') About Us
+				li
+					a(href='javascript:void(0)') Our Team
+				li
+					a(href='javascript:void(0)') Latest News
+				li
+					a(href='javascript:void(0)') Contact Us
+		.sidebar-social.align-items-center.justify-content-center
+			h5.social-title Follow Us On
+			ul
+				li
+					a(href='javascript:void(0)')
+						i.lni.lni-facebook-filled
+				li
+					a(href='javascript:void(0)')
+						i.lni.lni-twitter-original
+				li
+					a(href='javascript:void(0)')
+						i.lni.lni-linkedin-original
+				li
+					a(href='javascript:void(0)')
+						i.lni.lni-youtube
+.overlay-left
+// Start header Area
+section#hero-area.header-area.header-eight
+	.container
+		.row.align-items-center
+			.col-lg-6.col-md-12.col-12
+				.intro-left.wow.fadeInLeft(data-wow-delay='.2s')
+					h1.welcome-text Welcome to Charm Workshop
+					p.welcome-content
+						| Một không gian dành cho các bạn nhỏ được trực tiếp tham gia vào quá trình tạo nên những sản phẩm nghệ thuật dưới sự hướng dẫn của giáo viên, thể hiện cá tính riêng, sự sáng tạo và khéo léo của mình một cách chủ động. Đồng thời đây là cơ hội để trẻ làm quen với thế giới bên ngoài, làm quen với nhiều hoạt động nhỏ.
+				.intro-video-play.wow.fadeInLeft(data-wow-delay='.2s')
+					.play-thumb
+						a.glightbox_intro(href='assets/intro.mp4')
+							i.lni.lni-play
+						span.text Video giới thiệu
+			.col-lg-6.col-md-12.col-12
+				#intro-indicators.carousel.slide.wow.fadeIn(data-wow-delay='.1s' data-bs-ride='carousel')
+					.carousel-inner
+						.carousel-item.active
+							.header-image.wow.fadeInRight(data-wow-delay='.2s')
+								img(ngSrc='assets/images/images-intro1.jpg', width="640", height="640")
+						.carousel-item
+							.header-image.wow.fadeInRight(data-wow-delay='.2s')
+								img(ngSrc='assets/images/images-intro2.jpg', width="640", height="640")
+						.carousel-item
+							.header-image.wow.fadeInRight(data-wow-delay='.2s')
+								img(ngSrc='assets/images/images-intro3.jpg', width="640", height="640")
+section.about-area.about-five
+	.container
+		.row.align-items-center
+			.col-lg-6.col-12
+				.about-image-five.wow.fadeInLeft(data-wow-delay='.2s')
+					img(width="636", height="432", ngSrc='assets/images/images-our-story.jpg' alt='about')
+			.col-lg-6.col-12([style.height.px]='440')
+				.about-five-content.wow.fadeInRight(data-wow-delay='.2s')
+					h2.main-title.italic-content(style='text-align: justify')
+						| Ms.Charm Workshop và những giá trị ý nghĩa cho các bạn nhỏ...
+					.about-five-tab
+						nav
+							#nav-tab.nav.nav-tabs.about-nav-link.d-flex.justify-content-between(role='tablist')
+								button#nav-who-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#nav-who' type='button' role='tab' aria-controls='nav-who' aria-selected='true')
+									| Về Workshop
+								button#nav-vision-tab.nav-link(data-bs-toggle='tab' data-bs-target='#nav-vision' type='button' role='tab' aria-controls='nav-vision' aria-selected='false')
+									| Hoạt động Workshop
+						#nav-tabContent.tab-content
+							#nav-who.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='nav-who-tab')
+								p(style='font-style: italic; text-align: justify')
+									| Workshop là một hình thức học tập ngoại khóa có tính "mở" dành cho các bạn nhỏ. Thay vì chỉ ngồi lắng nghe và tiếp thu một cách thụ động, các bạn nhỏ sẽ được trực tiếp tham gia vào quá trình, thể hiện cá tính riêng, sự sáng tạo và khéo léo của mình một cách chủ động.
+									br
+									br
+									br
+									| Workshop cũng là cơ hội để các bạn nhỏ làm quen với thế giới bên ngoài, làm quen với hoạt động tập thể và hoạt động nhóm.
+							#nav-vision.tab-pane.fade(role='tabpanel' aria-labelledby='nav-vision-tab')
+								p(style='font-style: italic; text-align: justify')
+									| 1. Tổ chức những buổi thực hành trải nghiệm, các bạn nhỏ sẽ được cung cấp đầy đủ các nguyên vật liệu cần có để thực hành một cách thuận tiện nhất, gặp gỡ bạn mới sẽ được rèn luyện việc hòa nhập tập thể và hoạt động nhóm.
+									br
+									br
+									| 2. Nhận yêu cầu tổ chức các buổi workshop tại trường mầm non với số lượng lớn học viên tham gia.
+									br
+									br
+									| 3. Nhận cung cấp nguyên vật liệu cho các workshop về thủ công.
+	// container
+// ===== service-area start =====
+section#services.services-area.services-eight.d-flex.flex-column
+	.section-title-five
+		.container
+			.row
+				.col-12
+					.content
+						h6 Workshops
+						p Mời mọi người tham khảo các workshop bên tụi mình đang tổ chức...
+	.container(*ngIf='programs')
+		.row
+			.col-lg-4.col-md-6.col-sm-12(*ngFor='let p of programs')
+				.single-services.wow.zoomIn(data-wow-delay='.2s')
+					.image
+						a.glightbox_2([href]='p.mainPic')
+							img.thumb(width="354", height="500", [ngSrc]='p.mainPic || ""')
+					.service-content.d-flex.flex-column.justify-content-between
+						.d-flex.flex-column
+							h4 {{ p.topic }}
+							p.description([title]='p?.description')
+								| {{ p?.description }}
+						ng-container(*ngIf='p.images')
+							.d-flex.justify-content-center
+								a.cursor.template-btn4.glightbox_flowers((click)='changeImages( p.images )')
+									| Hình mẫu
+								p-galleria(
+									ngDefaultControl,
+									[responsiveOptions]='responsiveOptions',
+									[containerStyle]='{ "max-width": "60vh" }',
+									[numVisible]='7',
+									[circular]='true',
+									[fullScreen]='true',
+									[showItemNavigators]='true',
+									[showThumbnails]='true',
+									[value]='programImages',
+									[(visible)]='isShowed')
+									ng-template(pTemplate='item', let-item)
+										img([src]='item', style='width: 100%; display: block;')
+									ng-template(pTemplate='thumbnail', let-item)
+										div(class='grid grid-nogutter justify-content-center')
+											img([src]='item', style='display: block;')
+
+// Start Latest News Area
+#blog.latest-news-area.section
+	.section-title-five
+		.container
+			.row
+				.col-12
+					.content
+						h6 Hoạt động Workshop
+						p Mọi người tham khảo qua những workshop bên mình đã và đang tổ chức trong thời gian vừa qua nhé
+	.container(*ngIf='newss')
+		.row
+			.col-lg-4.col-md-6.col-sm-12(*ngFor='let n of newss')
+				.single-news.wow.bounceIn(data-wow-delay='.3s')
+					.image
+						a.glightbox_3([href]='n.mainPic')
+							img.thumb(width="416", height="558", [ngSrc]='n.mainPic || ""')
+						.meta-details
+							span(*ngIf='n && n.date')
+								| {{ n.date | timestampOrDateToDate | date: 'dd/MM/yyyy' }}
+					.content-body
+						h4.title
+							a(href='javascript:void(0)')
+								| {{ n.topic }}
+						p.italic-content.description([title]='n?.description')
+							| {{ n?.description }}
+// Start Team
+section#team.team-style-eight
+	.section-title-five
+		.container
+			.row
+				.col-12
+					.content
+						h6 Đội ngũ
+						p
+							| Với nhiều năm kinh nghiệm làm việc với các bạn nhỏ, tụi mình tự tin tổ chức những sân chơi cho các bạn một cách bài bản và có nhiều trải nghiệm ý nghĩa. Giới thiệu mọi người về những thành viên tụi mình...
+	.container
+		.row
+			.col-lg-4.col-md-6.col-12.d-flex
+				.single-team.wow.fadeIn.mx-auto(data-wow-delay='.5s')
+					.image
+						img.thumb(width="416", height="555", ngSrc='assets/images/images-ms-tram.jpg' alt='Image')
+					.info-head
+						.info-box
+							h4.name Ms.Trâm
+							span.designation
+								| Founder - Giáo viên hướng dẫn
+			.col-lg-4.col-md-6.col-12.d-flex
+				.single-team.wow.fadeIn.mx-auto(data-wow-delay='.7s')
+					.image
+						img.thumb(width="416", height="555", ngSrc='assets/images/images-ms-hoa.jpg' alt='Image')
+					.info-head
+						.info-box
+							h4.name Ms.Hoa
+							span.designation Giáo viên hướng dẫn
+			.col-lg-4.col-md-6.col-12.d-flex
+				.single-team.wow.fadeIn.mx-auto(data-wow-delay='.9s')
+					.image
+						img.thumb(width="416", height="555", ngSrc='assets/images/msHa.jpg' alt='Image')
+					.info-head
+						.info-box
+							h4.name Ms.Hà
+							span.designation Giáo viên hướng dẫn
+// Start Album
+section#album.album-style-eight
+	.section-title-five
+		.container
+			.row
+				.col-12
+					.content
+						h6 Thư viện ảnh
+	.container
+		.row
+			.col-12.d-flex
+				ul.box-container.three-cols.mx-auto
+					li.box.show.wow.bounceIn(data-wow-delay='.2s', *ngFor='let i of images; index as index;')
+						.inner
+							img.thumb(
+								width="512",
+								height="570",
+								[ngSrc]='i.src || ""',
+								alt='image',
+								style="cursor: pointer",
+								(click)="clickImage( index )")
+					p-galleria(
+						ngDefaultControl,
+						[responsiveOptions]='responsiveOptions',
+						[containerStyle]='{ "max-width": "60vh" }',
+						[numVisible]='7',
+						[circular]='true',
+						[fullScreen]='true',
+						[showItemNavigators]='true',
+						[showThumbnails]='true',
+						[value]='images',
+						[(visible)]='displayCustom',
+						[(activeIndex)]='activeIndex')
+						ng-template(pTemplate='item', let-item)
+							img([src]='item.src', style='width: 100%; display: block;')
+						ng-template(pTemplate='thumbnail', let-item)
+							div(class='grid grid-nogutter justify-content-center')
+								img([src]='item.src', style='display: block;')
+
+// CONTACT =========================
+section#contact.contact-section
+	.section-title-five
+		.container
+			.row
+				.col-12
+					.content
+						h6 Liên hệ
+	.container
+		.row
+			.col-12.wow.fadeInLeft(data-wow-delay='.2s')
+				.contact-item-wrapper
+					.row
+						.col-12.col-md-6.col-xl-4
+							.contact-item(style='minHeight: 205px')
+								.contact-icon
+									i.lni.lni-phone
+								.contact-content
+									h4 Th&ocirc;ng tin li&ecirc;n h&#x1EC7;
+									p Ms B&iacute;ch Tr&acirc;m
+									p Phone/Zalo: 0982.002.270
+									p tramtit1995&#64;gmail.com
+									p
+										| FB Page -
+										a(href='https://www.facebook.com/profile.php?id=100066457933569') Charm Workshop
+						.col-12.col-md-6.col-xl-4
+							.contact-item(style='minHeight: 205px')
+								.contact-icon
+									i.lni.lni-map-marker
+								.contact-content
+									h4 &Dstrok;&#x1ECB;a ch&#x1EC9; Workshop
+									p Good Morning Coffee & Tea
+									p 103 Võ Oanh
+									p
+										| Phường 25, Bình Thạnh, HCM
+						.col-12.col-md-6.col-xl-4
+							.contact-item(style='minHeight: 205px')
+								.contact-icon
+									i.lni.lni-alarm-clock
+								.contact-content
+									h4 Th&#x1EDD;i gian
+									p Ch&#x1EE7; nh&#x1EAD;t h&agrave;ng tu&#x1EA7;n
+									p Th&#x1EDD;i gian: 09 AM - 11:00 AM
+// Start REVIEW
+section#review
+	.section-title-five
+		.container
+			.row
+	.container
+		.row
+			#carouselExampleIndicators.carousel.slide.wow.fadeIn(data-wow-delay='.1s' data-bs-ride='carousel')
+				.carousel-inner
+					.carousel-item.active
+						.review-comment-box
+							.review-comment-1(alt='')
+							p.u-text.u-text-2
+								| &quot;Workshop r&#x1EA5;t vui v&agrave; chu &dstrok;&aacute;o.
+								| C&#x1EA3;m &#x1A1;n c&aacute;c c&ocirc; gi&aacute;o
+								| thi&#x1EC7;t nhi&#x1EC1;u.&quot;
+							h5.u-text.u-text-default.u-text-3 Ms.Trang
+					.carousel-item
+						.review-comment-box
+							.review-comment-2(alt='')
+							p.u-text.u-text-2
+								| &quot;C&ocirc; gi&aacute;o th&acirc;n thi&#x1EC7;n, h&#x1ED7;
+								| tr&#x1EE3; c&aacute;c b&#x1EA1;n nh&#x1ECF; nhi&#x1EC7;t
+								| t&igrave;nh.&quot;
+							h5.u-text.u-text-default.u-text-3 Ms.H&agrave;
+					.carousel-item
+						.review-comment-box
+							.review-comment-3(alt='')
+							p.u-text.u-text-2
+								| &quot;Kh&ocirc;ng gian l&#x1EDB;p h&#x1ECD;c b&eacute; r&#x1EA5;t
+								| th&iacute;ch v&agrave; c&ograve;n mu&#x1ED1;n tham gia
+								| v&agrave;o l&#x1EA7;n sau.&quot;
+							h5.u-text.u-text-default.u-text-3 Mr.Le
+				a.carousel-control-prev.left-slider(data-bs-target='#carouselExampleIndicators' role='button' data-bs-slide='prev' href='mstramworkshop.html')
+					span.carousel-control-prev-icon(aria-hidden='true')
+					span.visually-hidden Previous
+				a.carousel-control-next.left-slider(data-bs-target='#carouselExampleIndicators' role='button' data-bs-slide='next' href='mstramworkshop.html')
+					span.carousel-control-next-icon(aria-hidden='true')
+					span.visually-hidden Next
+// Start Footer Area
+section.footer-area.footer-five
+	.container
+		.row.justify-content-center
+			.col-lg-5
+				.footer-top-content
+					.text-center.wow.fadeIn(data-wow-delay='.4s' style='padding-bottom: 20px')
+						img(width="526", height="75", ngSrc='assets/images/images-thank3.png')
+					ul.social.text-center.mt-60(style='padding-bottom: 5px')
+						li
+							a(href='https://www.facebook.com/profile.php?id=100066457933569' target='_blank' rel='noopener noreferrer')
+								i.lni.lni-facebook-filled
+						li
+							a(href='javascript:void(0)')
+								i.lni.lni-instagram-filled
+						li
+							a(href='javascript:void(0)')
+								i.lni.lni-youtube
+	.footer-copyright
+		.container
+			.row
+				.col-12
+					.copyright.text-center
+						p.text
+							| Copyright &copy; 2024 Charm Workshop .
+							|
+							a(href='/quan-tri')
+								| Quan Tri
+a.scroll-top.btn-hover(href='#')
+	i.lni.lni-chevron-up

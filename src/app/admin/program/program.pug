@@ -1,0 +1,112 @@
+p-toast
+
+p-confirmPopup
+
+p-dialog(
+	styleClass='p-fluid',
+	header='Chi Tiết Chương Trình',
+	[style]="{ width: '450px' }",
+	[modal]='true',
+	[(visible)]='programDialog')
+	ng-template(pTemplate='content')
+		app-picture-upload.mb-3(
+			[imgSrc]='program.mainPic',
+			[avatar]='true',
+			(outputImg)='setMainImage( $event )')
+		.field.mb-2
+			label(for='topic') Tiêu Đề
+			input#topic(
+				pInputText,
+				required,
+				autofocus,
+				type='text',
+				[(ngModel)]='program.topic')
+			small.p-error(*ngIf='submitted && !program.topic') Tiêu đề không được để trống.
+		.field.mb-2
+			label(for='description') Mô Tả
+			textarea#description(pInputTextarea, [(ngModel)]='program.description', rows='3', cols='20')
+		.field
+			label(for='images') Bộ Sưu Tập
+			app-picture-upload#images.mb-3(
+				[imgSrcArray]='program.images || []',
+				(outputImgArray)='setImages( $event )')
+	ng-template(pTemplate='footer')
+		button.p-button-text(pButton , pRipple, label='Huỷ Bỏ', icon='pi pi-times', (click)='hideDialog()')
+		button.p-button-text(
+			pButton,
+			pRipple,
+			label='Lưu',
+			icon='pi pi-check',
+			[disabled]='!program.topic || program.topic.length === 0 || submitted',
+			(click)='saveProgram()')
+
+p-toolbar(styleClass='mb-4 gap-2')
+	ng-template(pTemplate='right')
+		button.p-button-text(
+			pButton,
+			pRipple,
+			label='Trang Chủ',
+			icon='pi pi-home',
+			(click)='signOut()')
+	button.p-button-success.me-2(pButton, pRipple, label='Thêm mới', icon='pi pi-plus', (click)='openNew()')
+
+p-table(
+	#programTable,
+	dataKey='id',
+	currentPageReportTemplate='Hiển thị hàng từ {first} tới {last} của tổng {totalRecords} hàng',
+	[resizableColumns]='true',
+	[value]='programs',
+	[rows]='6',
+	[paginator]='true',
+	[globalFilterFields]="['topic', 'description']",
+	[tableStyle]="{ 'min-width': '75rem' }",
+	[rowHover]='true',
+	[showCurrentPageReport]='true',
+	[sortField]='"order"',
+	(onRowReorder)="onRowReorder( $event )")
+	ng-template(pTemplate='caption')
+		.d-flex.align-items-center.justify-content-between
+			h5.m-0
+				| {{ selectedItem.label }}
+	ng-template(pTemplate='header')
+		tr
+			th(style="width:3rem")
+			th(psortablecolumn='topic')
+				| Tiêu Đề
+				p-sortIcon(field='topic')
+			th(psortablecolumn='description')
+				| Mô Tả
+				p-sortIcon(field='description')
+			th.text-center
+				| Ảnh Bìa
+			th.text-end
+				| Công Cụ
+	ng-template(pTemplate='emptymessage')
+		tr
+			td([attr.colspan]='5')
+				.d-flex.justify-content-center
+					| (Trống)
+	ng-template(pTemplate='body', let-p, let-index="rowIndex")
+		tr([pReorderableRow]="index")
+			td
+				span(class="pi pi-bars", pReorderableRowHandle)
+			td(style="max-width: 20rem")
+				| {{ p.topic }}
+			td(style="max-width: 20rem")
+				| {{ p.description }}
+			td.text-center
+				img.shadow-4([src]="p.mainPic", [alt]='p.topic', width='50')
+			td.text-end
+				button.p-button-rounded.p-button-success.me-2(
+					pButton ,
+					pRipple,
+					icon='pi pi-pencil',
+					(click)='editProgram(p)')
+				button.p-button-rounded.p-button-warning(
+					pButton ,
+					pRipple,
+					icon='pi pi-trash',
+					(click)='deleteProgram(p)')
+	ng-template(pTemplate='summary')
+		.d-flex.align-items-center.justify-content-between
+			| Tổng cộng {{ programs ? programs.length : 0 }} hàng.

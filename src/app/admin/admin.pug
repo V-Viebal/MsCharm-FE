@@ -1,0 +1,14 @@
+p-dock(position='left', [model]='items')
+	ng-template(pTemplate='item' let-item)
+		i#dock-icon(style='font-size: 2.5rem', [class]='item.icon', [pTooltip]="item.label", (click)='selectedItem = item')
+
+ng-container([ngSwitch]='selectedItem.id')
+	program(
+		*ngSwitchCase='"1"',
+		[selectedItem]='selectedItem')
+	news(
+		*ngSwitchCase='"2"',
+		[selectedItem]='selectedItem')
+	image(
+		*ngSwitchCase='"3"',
+		[selectedItem]='selectedItem')

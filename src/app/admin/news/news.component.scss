@@ -1,0 +1,33 @@
+:host {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-left: 5rem;
+
+	::ng-deep {
+		p-toolbar {
+			height: 12%;
+		}
+
+		p-table {
+			height: 88%;
+			display: flex;
+			flex-direction: column;
+
+			.p-datatable {
+				display: flex;
+				flex-direction: column;
+				min-height: 0;
+				height: 100%;
+
+				.p-datatable-wrapper {
+					height: -webkit-fill-available;
+				}
+
+				p-sorticon {
+					margin-left: 1rem;
+				}
+			}
+		}
+	}
+}

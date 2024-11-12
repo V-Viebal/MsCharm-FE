@@ -1,0 +1,63 @@
+p-toast
+
+p-confirmPopup
+
+p-toolbar(styleClass='mb-4 gap-2')
+	ng-template(pTemplate='right')
+		button.p-button-text(
+			pButton,
+			pRipple,
+			label='Trang Chủ',
+			icon='pi pi-home',
+			(click)='signOut()')
+	input.d-none(
+		multiple,
+		#fileInput,
+		accept='image/*',
+		type='file',
+		(change)='handleImages($event)')
+	button.p-button-success.me-2(
+		pButton,
+		pRipple,
+		label='Thêm mới',
+		icon='pi pi-plus',
+		(click)='selectImages()')
+
+p-table(
+	#imageTable,
+	dataKey='id',
+	currentPageReportTemplate='Hiển thị hàng từ {first} tới {last} của tổng {totalRecords} hàng',
+	[resizableColumns]='true',
+	[value]='images',
+	[rows]='6',
+	[paginator]='true',
+	[tableStyle]="{ 'min-width': '75rem' }",
+	[rowHover]='true',
+	[showCurrentPageReport]='true')
+	ng-template(pTemplate='caption')
+		.d-flex.align-items-center.justify-content-between
+			h5.m-0
+				| {{ selectedItem.label }}
+	ng-template(pTemplate='header')
+		tr
+			th Ảnh
+			th.text-end
+				| Công Cụ
+	ng-template(pTemplate='emptymessage')
+		tr
+			td([attr.colspan]='2')
+				.d-flex.justify-content-center
+					| (Trống)
+	ng-template(pTemplate='body', let-p)
+		tr
+			td
+				img.shadow-4([src]="p.src", width='50')
+			td.text-end
+				button.p-button-rounded.p-button-warning(
+					pButton ,
+					pRipple,
+					icon='pi pi-trash',
+					(click)='deleteImage(p)')
+	ng-template(pTemplate='summary')
+		.d-flex.align-items-center.justify-content-between
+			| Tổng cộng {{ images ? images.length : 0 }} hàng.

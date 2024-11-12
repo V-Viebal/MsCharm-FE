@@ -1,0 +1,108 @@
+p-toast
+
+p-confirmPopup
+
+p-dialog(
+	styleClass='p-fluid',
+	header='Chi Tiết Chương Trình',
+	[style]="{ width: '450px' }",
+	[modal]='true',
+	[(visible)]='newsDialog')
+	ng-template(pTemplate='content')
+		app-picture-upload.mb-3(
+			[imgSrc]='news.mainPic',
+			[avatar]='true',
+			(outputImg)='setMainImage( $event )')
+		.field.mb-2
+			label(for='topic') Tiêu Đề
+			input#topic(
+				pInputText,
+				required,
+				autofocus,
+				type='text',
+				[(ngModel)]='news.topic')
+			small.p-error(*ngIf='submitted && !news.topic') Tiêu đề không được để trống.
+		.field
+			label(for='description') Ngày
+			p-calendar([(ngModel)]="date", [showIcon]="true", dateFormat="dd/mm/yy")
+		.field
+			label(for='description') Mô Tả
+			textarea#description(pInputTextarea, [(ngModel)]='news.description', rows='3', cols='20')
+	ng-template(pTemplate='footer')
+		button.p-button-text(pButton , pRipple, label='Huỷ Bỏ', icon='pi pi-times', (click)='hideDialog()')
+		button.p-button-text(
+			pButton,
+			pRipple,
+			label='Lưu',
+			icon='pi pi-check',
+			[disabled]='!news.topic || news.topic.length === 0 || submitted',
+			(click)='saveNews()')
+
+p-toolbar(styleClass='mb-4 gap-2')
+	ng-template(pTemplate='right')
+		button.p-button-text(
+			pButton,
+			pRipple,
+			label='Trang Chủ',
+			icon='pi pi-home',
+			(click)='signOut()')
+	button.p-button-success.me-2(pButton, pRipple, label='Thêm mới', icon='pi pi-plus', (click)='openNew()')
+
+p-table(
+	#newsTable,
+	dataKey='id',
+	currentPageReportTemplate='Hiển thị hàng từ {first} tới {last} của tổng {totalRecords} hàng',
+	[value]='newss',
+	[rows]='6',
+	[rowHover]='true',
+	[paginator]='true',
+	[resizableColumns]='true',
+	[globalFilterFields]="['topic', 'description']",
+	[tableStyle]="{ 'min-width': '75rem' }",
+	[showCurrentPageReport]='true')
+	ng-template(pTemplate='caption')
+		.d-flex.align-items-center.justify-content-between
+			h5.m-0
+				| {{ selectedItem.label }}
+			//- span.p-input-icon-left
+			//- 	i.pi.pi-search
+			//- 	input(pInputText='' type='text' (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder='Search...')
+	ng-template(pTemplate='header')
+		tr
+			th(psortablecolumn='topic')
+				| Tiêu Đề
+				p-sortIcon(field='topic')
+			th(psortablecolumn='description')
+				| Mô Tả
+				p-sortIcon(field='description')
+			th.text-center
+				| Ảnh Bìa
+			th.text-end
+				| Công Cụ
+	ng-template(pTemplate='emptymessage')
+		tr
+			td([attr.colspan]='4')
+				.d-flex.justify-content-center
+					| (Trống)
+	ng-template(pTemplate='body', let-n)
+		tr
+			td(style="max-width: 20rem")
+				| {{ n.topic }}
+			td(style="max-width: 20rem")
+				| {{ n.description }}
+			td.text-center
+				img.shadow-4([src]="n.mainPic", [alt]='n.topic', width='50')
+			td.text-end
+				button.p-button-rounded.p-button-success.me-2(
+					pButton ,
+					pRipple,
+					icon='pi pi-pencil',
+					(click)='editNews( n )')
+				button.p-button-rounded.p-button-warning(
+					pButton ,
+					pRipple,
+					icon='pi pi-trash',
+					(click)='deleteNews( n )')
+	ng-template(pTemplate='summary')
+		.d-flex.align-items-center.justify-content-between
+			| Tổng cộng {{ newss ? newss.length : 0 }} hàng.
