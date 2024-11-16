@@ -6,7 +6,6 @@ import {
 	Input,
 	inject
 } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -18,7 +17,6 @@ import { AppService } from '../../app.service';
 	selector: 'login',
 	templateUrl: './login.pug',
 	styleUrls: ['./login.component.scss'],
-	providers: [ TranslateService ],
 	changeDetection	: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit, OnDestroy {

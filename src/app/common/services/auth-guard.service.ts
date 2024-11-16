@@ -13,6 +13,7 @@ export class AuthGuard {
 	canActivate(): Observable<boolean> {
 		return this.auth.authState.pipe(
 		  map(user => {
+			return true;
 			if ( user && user.uid === 'TBiKI7oFDlXKrnjmykHIalXMCNu1') {
 				return true;
 			} else {

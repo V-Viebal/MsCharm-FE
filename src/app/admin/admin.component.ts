@@ -4,7 +4,6 @@ import {
 	OnInit,
 	inject
 } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 import { AppService } from '../app.service';
 
@@ -12,7 +11,6 @@ import { AppService } from '../app.service';
 	selector: 'admin',
 	templateUrl: './admin.pug',
 	styleUrls: ['./admin.component.scss'],
-	providers: [ TranslateService ],
 	changeDetection	: ChangeDetectionStrategy.OnPush,
 })
 export class AdminComponent implements OnInit {

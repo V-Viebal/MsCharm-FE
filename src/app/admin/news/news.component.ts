@@ -7,7 +7,6 @@ import {
 	Input,
 	inject
 } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { Subscription, take } from 'rxjs';
 import { MessageService, MenuItem, ConfirmationService } from 'primeng/api';
 import _ from 'lodash';
@@ -20,7 +19,6 @@ import { AppService, INews } from '../../app.service';
 	selector: 'news',
 	templateUrl: './news.pug',
 	styleUrls: ['./news.component.scss'],
-	providers: [ TranslateService ],
 	changeDetection	: ChangeDetectionStrategy.OnPush,
 })
 export class NewsComponent implements OnInit, OnDestroy {

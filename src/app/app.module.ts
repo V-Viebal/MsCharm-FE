@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -44,9 +41,6 @@ import { PictureUploadComponent } from './common/components/picture-upload/pictu
 import { LoginComponent } from './admin/login/login.component';
 import { TimestampOrDateToDatePipe } from './common/pipes/timestamp.pipe';
 
-export function HttpLoaderFactory(http: HttpClient) {
-	return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
-}
 
 @NgModule({
 	declarations: [
@@ -83,14 +77,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 		FileUploadModule,
 		GalleriaModule,
 
-		TranslateModule.forRoot({
-			loader: {
-				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
-				deps: [HttpClient],
-			}
-		}),
-
 		AngularFireModule.initializeApp( ENVIRONMENT.FIREBASE_CONFIG ),
 		AngularFireAuthModule,
 		AngularFireStorageModule,
@@ -102,7 +88,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 		useValue: ENVIRONMENT.FIREBASE_CONFIG },
 		MessageService,
 		ConfirmationService,
-		DatePipe
+		DatePipe,
+		provideClientHydration()
 	],
 	bootstrap: [ AppComponent ]
 })

@@ -9,7 +9,6 @@ import {
 	ViewChild,
 	ElementRef
 } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription, forkJoin, take } from 'rxjs';
 import { MessageService, MenuItem, ConfirmationService } from 'primeng/api';
 import _ from 'lodash';
@@ -22,7 +21,6 @@ import { ImageService } from '../../common/services/image.service';
 	selector: 'image',
 	templateUrl: './image.pug',
 	styleUrls: ['./image.component.scss'],
-	providers: [ TranslateService ],
 	changeDetection	: ChangeDetectionStrategy.OnPush,
 })
 export class ImageComponent implements OnInit, OnDestroy {
