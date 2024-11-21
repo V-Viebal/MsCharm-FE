@@ -2,25 +2,6 @@ name: Build
 
 on:
   pull_request:
-    branches: [ main, staging, dev ]
-    paths-ignore:
-      - '.scripts/**'
-      - .gitignore
-      - CODE_OF_CONDUCT.md
-      - LICENSE
-      - README.md
-
-  workflow_call:
-    inputs:
-      environmentName:
-        required: true
-        type: string
-      build-artifacts:
-        type: boolean
-        required: truename: Build
-
-on:
-  pull_request:
     branches: [ "main", "dev", "staging" ]
     paths-ignore:
       - '.scripts/**'
