@@ -13,7 +13,7 @@ RUN npm i
 RUN ng build --configuration=production
 
 # Brotli compression for production assets
-COPY apps/web/compress.js .
+COPY compress.js .
 RUN node compress.js
 
 # build stage (Nginx with Brotli support)
